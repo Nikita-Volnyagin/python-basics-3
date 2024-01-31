@@ -11,12 +11,6 @@ class Product:
     description: str
     quantity: int
 
-    def dataclass(self, name, price, description, quantity):
-        self.name = name
-        self.price = price
-        self.description = description
-        self.quantity = quantity
-
     def check_quantity(self, quantity) -> bool:
         """
         TODO Верните True если количество продукта больше или равно запрашиваемому
@@ -48,10 +42,6 @@ class Cart:
 
     # Словарь продуктов и их количество в корзине
     products: dict[Product, int]
-
-    def dataclass(self):
-        # По-умолчанию корзина пустая
-        self.products = {}
 
     def add_product(self, product: Product, buy_count=1):
         """
